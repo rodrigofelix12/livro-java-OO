@@ -1,0 +1,96 @@
+Em java o nome de uma classe sempre se inicia com letra minuscula e, quando
+necessario, as palavras seguintes tambem tem seu case alterado. Dessa forma
+"esse nome de classe" vira "EsseNomeDeClasse".
+	Esta e uma linguagem case sensitive, ou seja, leva em consideraçao o case
+(caixa) em que as instruçoes sao escritas. Escrever System com letra minuscula,
+por exemplo, resultaria em um erro de compilaçao.
+
+	Entendendo o metodo main
+Ao ser executada, a maquina virtual procura pelo bloco main declarado em sua classe.
+Suas aplicaçoes java, em geral, vao possuir apenas um metodo main, um unico ponto
+de partida. 
+
+	Tipos Primitivos
+Vimos que e possivel representar um numero com ponto flutuante utilizando o tipo
+double, mas existem diversos outros tipos para representar os diferentes valores
+com que trabalhamos no dia a dia.
+Um detalhe simples, porem muito importante, sobre os tipos primitivos e que, 
+quando voce atribui um valor para eles (utilizando o operador =), este valor
+sera copiado para a sua variavel.
+
+	Casting de Valores
+Nem todos os valores sao compativeis. Por exemplo, se eu declarar o valor de 
+nossos livros na CalculadoraDeEstoque como um int, um erro de compilaçao 
+acontecera.
+	
+	Trabalhando com Continue e Break
+Voce pode utilizar a palavra-chave continue para pular uma iteraçao de seu
+looping e forçar a execuçao do proximo laço.
+Outra possibilidade comum e parar a execuçao de um looping dada uma determinada
+condiçao.
+
+	Orientaçao a Objetos
+A linguagem Java tem como forte caracteristica ter como paradigma a Orientaçao a
+Objetos, que estudaremos profundamente no decorrer do livro. Esse paradigma
+existe desde a decada de 70, mas foi depois do surgimento do Java que ficou 
+bastante famoso e que passou a ser levado mais a serio.
+Nossa CalculadoraDeEstoque esta fazendo todo o trabalho dentro de seu metodo main,
+ainda de forma muito procedural. A orientaçao a objetos propoe uma maneira
+diferente de fazer isso, voce passa a trabalhar de um jeito mais proximo a
+realidade humana. Para cada necessidade importante teremos objetos que interagem
+entre si e que sao compostos por estado (atributos) e comportamentos (metodos).
+O grande problema do paradigma procedural e que nao existe uma forma simples
+de conectar todos esses elementos, ja na orientaçao a objetos podemos fazer
+isso de um jeito muito simples. Assim como no contexto real, podemos criar
+um objeto para representar tudo o que um livro tem e o que ele faz.
+
+	Classe x Objeto
+Uma classe e apenas um molde. Uma especificaçao que define para a maquina
+virtual o que um objeto desse tipo devera ter e como ele deve se comportar.
+Nossa livraria podera ter milhares de livros (objetos), mas existira apenas
+uma classe Livro (molde). Cada objeto que criarmos do tipo Livro tera seus 
+proprios valores, ou seja, cada livro tera o seu proprio nome, sua descriçao,
+um valor e um numero de ISBN.
+
+Criar metodos dentro das classes que representam moldes podem ser muito uteis, 
+uma vez que nosso codigo agora tem uma manutenibilidade muito maior. Sempre
+devemos criar metodos de forma generica e reaproveitavel, assim sera muito
+mais facil e produtivo evoluir o codigo no futuro.
+
+	Referencia a objetos
+E fundamental perceber que, quando instanciamos um novo objeto com a palavra
+reservada new, um Autor por exemplo, guardamos em sua variavel uma referencia
+para esse objeto, e nao seus valores. Ou seja, a variavel autor nao guarda o
+valor de um nome, email e outros atributos da classe Autor, mas sim uma forma
+de acessar esses atributos do autor em memoria. Muito diferente de quando
+trabalhamos com tipos primitivos que guardam uma copia do valor.
+
+	Nomes ambiguos e o THIS
+Ainda que seja opcional, e sempre uma boa pratica usar o this em atributos
+para evitar futuros problemas de ambiguidade e tambem para deixar claro que este
+e um atributo da classe, e nao uma simples variavel.
+
+	Entendendo a construçao de um Objeto
+Quando escrevemos a instruçao Livro() seguida da palavra reservada new, estamos
+pedindo para a JVM procurar a classe Livro e invocar o seu construtor, que se
+parece com:
+public Livro(){
+}
+Um construtor e bastante parecido com um metodo comum, mas ele nao e um.
+Diferente dos metodos, um construtor tem o mesmo nome da classe e nao tem um
+retorno declarado. Mas, se nunca escrevermos esse construtor, quem o fez? 
+Sempre que voce nao criar um construtor para suas classes, o compilador fara
+isso para voce. Agora que ja temos um construtor, o compilador nao vai criar
+mais nenhum. Ele so faz isso quando a sua classe nao tem nenhum construtor
+definido. Veremos mais adiante que construtores tambem podem receber parametros
+e inicializar os atributos de suas classes.
+
+	Vantagens da Orientaçao a Objetos
+Vimos neste capitulo apenas algumas das muitas vantagens de se trabalhar com 
+orientaçao a objetos. Observe com atençao o codigo que criamos. Voce vai conseguir
+perceber que uma das grandes diferenças da OO e que temos uma forma forte de
+criar conexao entre informaçoes e funcionalidades. Alem disso, nosso codigo fica
+muito mais organizado e evitamos muita repetiçao. O que ganhamos? Um codigo mais
+flexivel e, com isso, mais facil de evoluir e manter.
+
+Continuar do Capitulo 4 - Encapsulamento
