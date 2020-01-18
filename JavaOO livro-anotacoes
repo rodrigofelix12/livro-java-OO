@@ -407,3 +407,42 @@ em outras linguagens.
 Um mapa e composto por um conjunto (Set) de chaves associadas a um objeto valor.
 Sua sintaxe pode aparecer um pouco intimidadora no começo, mas nao ha nada de 
 tao complicado.
+
+Capitulo 12 - Streams e novidades do Java 8
+
+A API de Collections e bastante robusta, sem duvidas. Ha muito o que explorar em 
+suas diversas estruturas e soluçoes. Mas o fato e que estamos falando de uma API 
+gigante e com mais de 15 anos, que com certeza possui algumas limitaçoes e 
+caracteristicas que nao poderiam ser evoluidas sem que houvesse uma sobrecarga 
+ou ainda quebra de compatibilidade. Por esse e diversos outros motivos o Java 8 
+introduziu diversas novidades que nos trazem uma forma bem mais interessante e 
+funcional de trabalhar com nossas coleçoes.
+O Stream traz para o Java uma forma mais funcional de trabalhar com as nossas 
+coleçoes, usando uma interface fluente! Separando as funcionalidades do Stream 
+da Collection, tambem ficou mais facil de deixar claro que metodos sao mutaveis, 
+evitar problema de conflito de nome de metodos, entre outros.
+
+Capitulo 13 - Um pouco da historia do Java
+
+Origem da linguagem
+
+A grande ideia da linguagem e voce escrever uma aplicaçao e executa-la nos 
+diferentes dispositivos existentes. Ou seja, portabilidade e uma das caracteristicas 
+mais fortes e presente desde suas origens. Claro que essa nao e a unica caracteristica 
+forte da linguagem, que tambem e robusta, paralelizavel, segura e dentre diversas 
+outras que serao melhor detalhadas: estavel.
+Algumas das caracteristicas que tornam o Java muito bem vindo como linguagem 
+sao sua estabilidade e retrocompatibilidade. Voce pode reparar isso pela 
+numeraçao de suas versoes, repare que apesar da estrategia de marketing de chama-lo 
+de Java 8, por exemplo, a versao continua sendo 1.8. Ou seja, o 1 sempre esta 
+presente indicando que ainda nao houve uma quebra de compatibilidade desde seu 
+lançamento.
+Diferente das demais linguagens, uma aplicaçao Java pode ser executada em qualquer 
+um dos diferentes sistemas operacionais existentes, como por exemplo Windows, 
+Linux ou Mac OS. Essa possibilidade abre muitos caminhos e foi um dos principais 
+fatores que tornaram a linguagem tao atraente pro mercado. A grande chave para 
+essa portabilidade e a maquina virtual, ou JVM. No lugar de instruçoes nativas 
+para um determinado hardware, apos compilado um codigo-fonte em Java e traduzido 
+para um formato conhecido com bytecode. Esse bytecode independe da arquitetura 
+do sistema em que foi gerado e portanto podera ser executado em qualquer plataforma, 
+contanto que ela tenha uma JVM instalada.
