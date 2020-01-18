@@ -328,3 +328,82 @@ String, eles sempre retornam uma referencia nova para o valor transformado.
 Dominar o pacote padrao do Java e um grande diferencial. Muitas vezes ja ha 
 algo implementado para nos ajudar com situaçoes do dia a dia. E outras palavras, 
 o pacote java.lang com certeza fara parte de sua rotina.
+
+Capitulo 11 - Collection Framework
+
+Manipular um array e bastante trabalhoso. Essas foram apenas algumas das muitas 
+questoes que apareceriam em nosso codigo. Por esse e outros motivos, o Java2 
+1.2 introduziu um conjunto de classes e interfaces bastante conhecido como 
+Collections Framework. Essa robusta API traz estruturas bem mais interessantes 
+para lidar com os mais diferentes tipos de dados.
+
+ArrayList versus array
+
+No lugar de trabalhar diretamente com arrays, podemos utilizar uma ArrayList para 
+representar a multiplicidade de Produtos e nos auxiliar nas operaçoes necessarias 
+em nosso CarrinhoDeCompras. Essa classe e uma das introduçoes da API de Collections.
+O ArrayList tem um conjunto de metodos que, na maior parte do tempo, representam 
+bem as nossas necessidades. O metodo remove pode agora receber o proprio valor 
+a ser removido, mas tambem tem uma sobrecarga que recebe a posiçao que deve ser 
+removida. Voce pode escolher qual opçao lhe atender melhor. Um ponto muito 
+interessante e que o ArrayList, assim como as demais classes da API de Collection,
+trabalham de forma generica. Caso contrario, haveria uma ArrayList para cada tipo 
+de dado que precisassemos adicionar, como uma String, um int, ou mesmo uma data.
+Todos os seus metodos trabalham com Object.
+ArrayList<Produto> produtos = new ArrayList<Produto>();
+A sintaxe pode parecer estranha no começo, mas note que a unica mudança e que 
+agora estamos indicando ao compilador que essa lista deve trabalhar com Produtos.
+Ha dois grandes ganhos aqui, o primeiro sera pela nao necessidade de um casting 
+ao recuperar valores desta lista. O codigo fica bem mais limpo sem os castings 
+e evitamos as recorrentes ClassCastExceptions. O outro ganho sera a segurança 
+de que nao conseguiremos adicionar nada que nao seja do tipo Produto nessa lista.
+Nao precisamos de um atributo contador, nao temos que limitar o tamanho do array, 
+entre outras desvantagens comentadas.
+E interessante reconhecer que um ArrayList nao e um array! Essa confusao e bastante 
+comum, mas na verdade ArrayList usa um array internamente para armazenar os dados, 
+mas isso esta bem encapsulado. Em nenhum momento precisaremos recuperar seu array 
+interno para fazer operaçoes mais complexas, nao temos acesso a ele e nem deveriamos.
+O ArrayList resolve todos os problemas que comentamos do array. Utiliza-lo, com 
+certeza, sera uma melhor opçao. Mas existem outros tipos de lista que nao utilizam 
+necessariamente um array internamente. Um exemplo e a LinkedList (lista ligada);
+enquanto a ArrayList e mais rapida para fazer pesquisas (iterar), a LinkedList 
+e mais rapida para inserir e remover elementos de suas pontas. O que todas elas 
+tem em comum e a interface List, do pacote java.util. Para nao deixar nosso 
+codigo dependendo de um tipo de lista especifico (acoplamento), ja que podemos 
+a qualquer momento muda-las, e uma boa pratica programar voltado para a interface.
+O tipo ArrayList aparece apenas no momento de instanciar a lista, em todos os 
+demais pontos nos referimos a ela como uma List<Produto>. Isso torna nosso codigo 
+muito mais flexivel para mudanças. Para utilizar LinkedList, bastaria mudar o 
+tipo em que estamos dando new sem causar nenhum efeito colateral indesejado ao 
+restante do codigo.
+
+Normalmente trabalhamos com uma lista quando seus elementos internos podem repetir 
+e sua ordem tem alguma importancia, mas note que nao e esse o caso de nossos cupons.
+Um cupom e unico, nao ha repetiçoes e, alem disso, a ordem deles nao importa, 
+afinal estamos utilizando esses dados apenas para consulta.
+Em casos como este, podemos utilizar uma outra estrutura de dados bastante 
+interessante, um conjunto (java.util.Set).
+Um conjunto (ou Set em Java) funciona de forma parecida com os conjuntos da 
+matematica. Ela e uma coleçao, assim como a List, mas em que nao ha repetiçao 
+de seus dados internos. Alem disso, sua ordem nao e necessariamente a ordem 
+em que os valores foram inseridos, isso pode variar bastante de cada implementaçao.
+Assim como a List, o Set e apenas uma interface. Para utilizar um Set, precisamos 
+instanciar alguma de suas implementaçoes, como a HashSet, que e uma das implementaçoes 
+mais usadas.
+Outra vantagem muito importante do Set e que existem implementaçoes, como o proprio 
+HasSet que ja estamos utilizando, que apresentam uma performance muito melhor 
+que a da List para fazer consultas (com o metodo constains, por exemplo).
+
+JAVA.UTIL.MAP
+
+Essa e uma necessidade muito comum: vincular um objeto a uma chave unica, para 
+conseguir buscar esse valor rapidamente. Poderiamos resolver isso com uma lista, 
+mas ja vimos que essa nao e a melhor estrutura quando queremos fazer buscas.
+Para casos como esse voce pode utilizar uma outra estrutura de dados muito util, 
+um Mapa (java.util.Map). E muito comum confundir isso, afinal ela sempre anda de 
+maos dadas com as estruturas da API de Collection, mas um Map nao estende a 
+interface Collection. Essa estrutura tambem e bastante conhecida como dicionario 
+em outras linguagens.
+Um mapa e composto por um conjunto (Set) de chaves associadas a um objeto valor.
+Sua sintaxe pode aparecer um pouco intimidadora no começo, mas nao ha nada de 
+tao complicado.
