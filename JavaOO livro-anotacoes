@@ -288,3 +288,43 @@ acessar mais valores do que o array suporta), podemos fazer isso com nossa regra
 Assim como a API do Java, podemos lançar exceptions para casos como esse. Essa e 
 uma forma mais robusta do que validar e retornar um boolean ou uma mensagem que 
 pode simplesmente ser ignorada.
+
+Capitulo 10 - Conhecendo a API
+
+Na ausencia de um construtor, o compilador adicionara um construtor vazio para 
+voce. Assim e com a herança, na ausencia de um extends, o Java dira que sua classe 
+extends um tipo conhecido como Object. Com isso, podemos concluir que toda classe 
+em Java e um Object, sem exceçao. Pode nao ser diretamente, mas ainda que indiretamente,
+ela sera, pois herdara de alguem que herda diretamente ou indiretamente de Object.
+A grande vantagem desse tipo em comum e que toda classe herda alguns metodos 
+declarados na classe Object e ainda podem ser referenciadas como tal.
+Percebemos que receber um Object como parametro nem sempre e uma boa alternativa, 
+pois sempre precisaremos de castings e mais castings, nao muito como fugir. Manter 
+o tipo de parametro e array da classe RegistroDeVendas como Produto neste caso 
+sera uma estrategia bem mais interessante.
+
+Alguns dos metodos da classe Object
+
+Vimos que o custo de fazer polimorfismo com Object pode nem sempre valer a pena,
+mas isso nao invalida o quanto ela e importante para a linguagem Java. Nela, estao 
+presentes todos os metodos que toda classe em Java deve ter!
+
+O pacote java.lang
+
+Object, String, System, classes wrappers dos tipos primitivos entre diversas 
+outras estao todas presentes no pacote padrao do Java, o java.lang. Este pacote 
+e automaticamente incluido em todas as suas classes, diferente de todos os demais 
+da linguagem. Outra classe muito util em nosso dia a dia e a Random.
+
+java.lang.String
+
+Para fechar nosso passeio pelo pacote padrao do Java, vamos entender um pouco 
+melhor a classe String. E muito comum confundi-la com um tipo primitivo, mas 
+Strings guardam referencias a objetos. Assim como qualquer outra variavel de 
+referencia, nao devemos compara-la utilizando o operador ==, mas sim o equals 
+que foi reescrito na classe String para comparar cada caractere do texto. Toda 
+String e imutavel. O mesmo vale para todo metodo que aplica transformaçoes da 
+String, eles sempre retornam uma referencia nova para o valor transformado.
+Dominar o pacote padrao do Java e um grande diferencial. Muitas vezes ja ha 
+algo implementado para nos ajudar com situaçoes do dia a dia. E outras palavras, 
+o pacote java.lang com certeza fara parte de sua rotina.

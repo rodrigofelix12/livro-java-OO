@@ -11,7 +11,7 @@ public class CarrinhoDeCompras {
 	
 	public void adiciona(Produto produto) {
 		System.out.println("Adicionando: " + produto);
-		this.produtos[1] = produto;
+		this.produtos[contador] = produto;
 		contador ++;
 		this.total += produto.getValor();
 	}

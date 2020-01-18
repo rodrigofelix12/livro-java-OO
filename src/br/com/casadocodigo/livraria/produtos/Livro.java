@@ -25,6 +25,19 @@ public abstract class Livro implements Produto{
 		System.out.println("--");
 	}
 	
+//	@Override
+//	public void toString() {
+//		System.out.println("Nome: " + nome);
+//		System.out.println("Descrição: " + descricao);
+//		System.out.println("Valor: " + valor);
+//		System.out.println("ISBN: " + isbn);
+//		
+//		if (this.temAutor()) {
+//			autor.toString();
+//		}
+//		System.out.println("--");
+//	}
+	
 	public Livro(Autor autor) {
 		this();
 		if (autor == null) {
