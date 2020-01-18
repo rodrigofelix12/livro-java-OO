@@ -168,3 +168,33 @@ Voce nao pode ter metodos abstratos em uma classe que nao e abstrata.
 - Uma classe abstrata pode ter metodos abstratos e nao abstratos (concretos).
 - Toda classe filha (subclasse) precisa implementar os metodos abstratos da
 classe pai (superclasse). A nao ser que ela tambem seja abstrata.
+
+Capitulo 7 -  Interface
+
+Em Java, ha uma outra forma para se tirar proveito de todos os beneficios do 
+polimorfismo sem ter que acoplar tanto suas classes com varios niveis de herança.
+Voce pode estabelecer um fator em comum entre as classes, criando uma especie
+de contrato. Para esse contrato, nao importa a forma como sera implementado, a 
+unica coisa que importa e que seus metodos (clausulas) sejam implementados de 
+alguma forma. Isso lembra algo? Sim, e bastante parecido com um metodo abstrato
+cujo corpo voce so define na superclasse para que todas as subclasses herdem a
+obrigaçao de implementa-lo. Esse tipo de contrato Java e conhecido com Interface.
+	Uma interface nao pode ter atributos e, ate a versao 1.7 da linguagem, tambem 
+nao pode ter nenhum metodo concreto, ou seja, com implementaçao. Veremos que, a 
+partir do Java 1.8, isso mudou um pouco.
+
+O uso da interface ja nos ajudou a resolver o problema de polimorfismo de nossos 
+produtos. Agora ha uma forma simples e flexivel para representar qualquer Produto 
+de nossa livraria.
+Assim como podemos assinar diversos contratos ao longo de nossas vidas, uma classe 
+tambem pode implementar diversas interfaces.Voce sempre pode e deve favorecer
+interfaces para criar polimorfismo entre suas classes, seu codigo fica muito mais 
+flexivel e com menor acoplamento.
+
+Interface funcional
+	Uma interface nao precisa ter um unico metodo abstrato, mas essa e uma estrutura 
+bem comum. Normalmente, trabalhar com interfaces menores e uma estrategia interessante, 
+afinal temos mais flexibilidade. Se alguem implementar aquela interface e porque 
+realmente precisa do comportamento que ela estabelece.A partir do Java 8, as 
+interfaces que obedecem essa regra de ter um unico metodo abstrato podem ser 
+chamadas de interface funcional.
