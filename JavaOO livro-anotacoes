@@ -243,3 +243,48 @@ estiver no mesmo pacote. Classes tambem nao podem utilizar esse modificador de
 acesso.
 
 Capitulo 9 - Arrays e exception
+
+Um array e um tipo, um objeto. Isso significa que, antes de fazer qualquer 
+operaçao com o atributo produtos, precisaremos instancia-lo. A sintaxe e um 
+pouco diferente, mas e bem simples.
+Pode parecer um pouco assustador no começo, mas a stacktrace normalmente nos 
+passa as informaçoes necessarias e fundamentais para a compreensao e resoluçao 
+dos problemas. E muito comum enviarmos a stacktrace quando estamos procurando 
+por ajuda em foruns ou listas de discussoes. Isso facilita bastante na investigaçao 
+do problema. Ha uma forma bastante conhecida e ja utilizada em diversas linguagens 
+para tentar executar um bloco de codigo de risco e capturar caso ocorra uma 
+exception neste bloco, evitando que a stacktrace seja exibida para o usuario 
+final e que a exceçao pare a execuçao de nosso codigo. Esse recurso e conhecido 
+como try/catch. Dentro do catch podemos colocar o codigo que queremos executar 
+apenas quando uma exception do tipo declarado acontecer. Ou seja, nele colocamos 
+o codigo que queremos executar apenas caso um ArrayIndexOutOfBoundException ocorra.
+Capturar Exception nem sempre e muito interessante, afinal se trata de um tipo
+muito generico! Muitas vezes queremos dar uma tratativa diferente para cada tipo 
+de exceçao do codigo. Uma alternativa para isso seria capturar mais de uma 
+exception em um mesmo bloco try. Existem momentos em que precisamos executar 
+alguma açao apos um try ou catch, independente se houve ou nao uma exception 
+envolvida. Nesses casos, podemos utilizar uma terceira clausula chamada finally.
+As instruçoes do bloco finally serao executadas sempre, independente de tudo ter 
+ido bem ou de alguma exception ter acontecido. Esse recurso e muito comum quando 
+estamos trabalhando com conexao do banco de dados ou leitura/escrita de arquivos.
+Independente de qualquer coisa, depois de usar uma conexao, por exemplo, sempre 
+queremos fecha-la. As unchecked exceptions nao herdam diretamente da classe 
+Exception, mas sim de sua filha RuntimeException.
+Checked Exceptions - Diferente disso, quando estamos fazendo a leitura de um 
+arquivo ou qualquer outra operaçao de risco que nao pode ser facilmente evitada
+(o arquivo pode nao existir, por exemplo) o compilador nos obriga a tratar esse
+codigo! Esse e um outro tipo de exception da linguagem, conhecida como checked 
+exception.
+
+THROW OU THROWS?
+E muito comum confundir no inicio, mas lembre-se que usamos o throw no imperativo 
+quando estamos efetivamente lançando uma exception. Quando escrito no indicativo, 
+o throws apenas informa ao compilador e a quem mais interessar que determinado 
+metodo lança uma exception.
+Nosso codigo tambem pode lançar uma exception caso algo inesperado aconteça.
+E nao estou falando de lançar uma exception acidentalmente. Assim como um array 
+dispara o ArrayIndexOutOfBoundException quando fazemos algo inesperado (tentar 
+acessar mais valores do que o array suporta), podemos fazer isso com nossa regras.
+Assim como a API do Java, podemos lançar exceptions para casos como esse. Essa e 
+uma forma mais robusta do que validar e retornar um boolean ou uma mensagem que 
+pode simplesmente ser ignorada.
