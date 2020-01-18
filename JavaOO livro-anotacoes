@@ -198,3 +198,48 @@ afinal temos mais flexibilidade. Se alguem implementar aquela interface e porque
 realmente precisa do comportamento que ela estabelece.A partir do Java 8, as 
 interfaces que obedecem essa regra de ter um unico metodo abstrato podem ser 
 chamadas de interface funcional.
+
+Capitulo 8 - Pacotes
+
+Por enquanto nossas classes estao todas em um mesmo arquivo, dentro da pasta src.
+Conforme o projeto vai evoluindo, mais e mais classes sao criadas e fica cada 
+vez mais dificil manter a organizaçao de nosso projeto. Mas organizaçao nao sera 
+o unico problema aqui. Com o passar do tempo, tabalharemos com classes de terceiros
+(bibliotecas) e classes da propria API da linguagem, o que torna ainda maior o 
+risco de criarmos uma classe com o nome igual a outra existente em alguma dessas 
+bibliotecas. Em Java, classes sao agrupadas em pacotes (packages). Toda classe deve 
+ser agrupada em pacotes. Isso, alem de ajudar na organizaçao de nossos projetos, ajudara 
+quando houver um ambiguidade de nomes.
+
+Nomenclatura Padrao dos Pacotes Java
+Por padrao, um pacote Java sempre:
+	- e escrito em letra minuscula (lowercase);
+	- deve ser um nome de dominio, iniciado com com, edu, gov etc.
+E muito natural que o pacote seja o seu dominio (ou da empresa), como
+br.com.casadocodigo, br.com.alura ou br.com.caelum.
+
+Nossas classes devem ser publicas para que fiquem visiveis entre os diferentes
+pacotes. Para o caso de classes publicas, o arquivo .java obrigatoriamente tem 
+que ter o nome da classe.
+
+Modificadores de Acesso
+
+Agora que nossas classes estao organizada em pacotes, podemos entender um pouco 
+melhor os diferentes modificadores de acesso. Ja vimos que, para uma classe ou 
+metodo ser acessado de outro pacote, eles precisam ter visibilidade public. A 
+regra e clara: uma classe publica pode ser acessada por qualquer outra classe 
+presente no mesmo projeto. O mesmo vale para atributos, metodos e construtores.
+Tambem ja conhecemos o private. Esse modificador de acesso torna classes, atributos, 
+metodos ou construtores visiveis apenas para a propria classe. Por esse motivo, 
+uma classe nao deve ser anotada com private, quem podera acessa-la? Mas vimos que 
+faz bastante sentido, para manter o encapsulamento, sempre deixar seus atributos 
+private. Ha ainda a visibilidade default (quando nao ha modificador algum). A 
+essa altura, voce ja pode ter percebido que neste caso apenas classes do mesmo 
+pacote podem ter acesso aos atributos, construtores, metodos ou classes com a 
+ausencia de um modificador de acesso. O ultimo modificador e o protected, que 
+tentamos evitar no capitulo de herança. Todo elemento que for protected ficara 
+visivel para a propria classe, para suas classes filhas e tambem para quem 
+estiver no mesmo pacote. Classes tambem nao podem utilizar esse modificador de 
+acesso.
+
+Capitulo 9 - Arrays e exception
