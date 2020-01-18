@@ -125,3 +125,46 @@ tempo de execuçao (runtime) e nao em compilaçao. Ou seja, a JVM vai localizar
 o objeto instanciado em memoria, um Ebook por exemplo, e chamar o metodo
 aplicaDescontoDe de sua classe e nao da classe Livro, que e o tipo pelo qual
 ele foi referenciado.
+
+Capitulo 6 - Classe Abstrata
+
+Afinal, o que e um Livro agora? Um Ebook ou um LivroFisico? Na verdade, nenhum
+dos dois. Um livro e apenas uma abstraçao de tudo que os diferentes tipos de 
+livro devem ter(herdar) em nossa livraria. Ao fazer uma venda, queremos saber
+ao certo o tipo de livro que esta sendo vendido, nunca deveriamos permitir a
+venda de um Livro, mas sim de suas subclasses. Para nossa sorte, ha uma forma
+bem simples de impedir que a classe Livro seja instanciada e utilizada dessa
+forma: podemos simplesmente adicionar em sua declaraçao o modificador abstract.
+
+Por que precisamos da Classe Livro?
+Afinal, para que serve a classe Livro, se nao podemos mais instancia-la? Lembre-se
+que essa classe idealiza tudo o que um Livro tem, ela ainda esta sendo muito
+util isolando todos os atributos e comportamentos que sao um padrao entre os
+diferentes tipos de livro. A classe passa a servir exclusivamente para herança e 
+polimorfismo, que sao recursos bastante uteis e poderosos.
+
+Quando uma classe deve ser abstrata?
+	Quando voce for planejar a hierarquia e herança de suas classes, voce vera
+que algumas classes sao bastante especificas e que jamais deveriam ser instanciadas.
+A classe Animal pode ser vista como um exemplo. O que exatamente e um Animal? Poderia
+ser um Leao, um Pinguim ou qualquer outro Animal do planeta. Essa classe pode
+definir tudo o que todos os animais tem em comum, mas cada tipo de Animal tem
+suas particularidades e deve ser representado de uma forma propria.
+
+Toda classe abstrata, como e o caso da nossa classe Livro, pode ter metodos
+abstratos. Toda classe filha (subclasse) concreta (nao abstrata) e obrigada a
+escrever os metodos abstratos da classe pai (superclasse), caso contrario seu 
+codigo nao compilara.
+
+Relembrando Algumas Regras
+
+Nao e nem um pouco complicado trabalhar com classes abstratas, mas existem algumas
+regras que precisam ser respeitadas. Apenas para relembrar, sao elas:
+
+- Uma classe pode ser abstrata sem ter nenhum metodo abstrato. A partir do momento
+em que ela se tornar abstrata, nenhum codigo podera mais instancia-la.
+- Se voce declarar um metodo abstrato, precisara tornar a classe abstrata tambem!
+Voce nao pode ter metodos abstratos em uma classe que nao e abstrata.
+- Uma classe abstrata pode ter metodos abstratos e nao abstratos (concretos).
+- Toda classe filha (subclasse) precisa implementar os metodos abstratos da
+classe pai (superclasse). A nao ser que ela tambem seja abstrata.
