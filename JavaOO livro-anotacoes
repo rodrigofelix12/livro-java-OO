@@ -95,3 +95,33 @@ flexivel e, com isso, mais facil de evoluir e manter.
 
 Continuar do Capitulo 4 - Encapsulamento
 Continuar do Capitulo 5 - Herança e Polimorfismo
+
+
+Ao utilizar a palavra reservada extends, estamos dizendo que um Ebook (subclasse)
+herda tudo o que a classe Livro (superclasse) tem. Portanto, mesmo sem ter
+nenhum desses metodos declarados diretamente na classe Ebook, podemos executar
+o seguinte codigo sem nenhum problema:
+Ebook ebook = new Ebook();
+ebook.setNome("Java 8 pratico");
+
+Herança Multipla
+	Uma regra importante da herança em Java e que nossas classes so podem herdar
+	diretamente de uma classe pai. Ou seja, nao ha herança multipla como na 
+	linguagem c++. Mas sim, uma classe pode herdar de uma classe que herda de outra
+	e assim por diante. Voce pode encadear a herança de suas classes, no entanto,
+	veremos mais a frente que essa estrategia nao e muito interessante por aumentar
+	demais o acoplamento entre suas classes.
+	
+Uma forma interessante e simples de resolver o problema de visibilidade do atributo
+valor na classe Ebook e utilizando a interface da classe pai, seus proprios
+metodos. Por exemplo, no lugar de acessar o atributo diretamente, poderiamos
+utilizar os metodos getValor e setValor. Dessa forma, nao perderemos nem um
+pouco do encapsulamento da classe Livro! Garantir que o encapsulamento das
+classes e fundamental. Ainda que um pouco, quando liberamos acesso dos atributos
+da superclasse para suas classes filhas, estamos violando o encapsulamento
+dessa classe.
+Apesar do Polimorfismo, em Java, o metodo executado sempre sera escolhido em 
+tempo de execuçao (runtime) e nao em compilaçao. Ou seja, a JVM vai localizar
+o objeto instanciado em memoria, um Ebook por exemplo, e chamar o metodo
+aplicaDescontoDe de sua classe e nao da classe Livro, que e o tipo pelo qual
+ele foi referenciado.
